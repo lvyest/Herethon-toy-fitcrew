@@ -73,40 +73,39 @@ navLinks.forEach(link => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  applyFilters();
-  });
-  
-  function applyFilters() {
-  const crewCardsContainer = document.getElementById('crew-cards');
-  crewCardsContainer.innerHTML = ''; // 기존 카드 제거
-  
-  crewData.forEach(crew => {
-    if ((selectedRegion === "전체" || crew.region === selectedRegion) &&
-        (selectedSport === "전체" || crew.category === selectedSport)) {
-      
-      const ddayClass = crew.dday <= 14 ? 'dday-orange' : 'dday-black';
-      const borderClass = crew.dday == 1 ? 'border-mint' : '';
-  
-      const crewCard = document.createElement('div');
-      crewCard.className = 'crew-card';
-      crewCard.innerHTML = `
-        <img src="${crew.image}" alt="${crew.category}" />
-        <div class="card-content ${borderClass}">
-          <div class="category-d-day">
-            <span class="category">${crew.category}</span> 
-            <span class="d-day ${ddayClass}">D-${crew.dday}</span>
-          </div>
-          <h3>${crew.title}</h3>
-          <a href="${crew.link}">상세보기</a>
+applyFilters();
+});
+
+function applyFilters() {
+const crewCardsContainer = document.getElementById('crew-cards');
+crewCardsContainer.innerHTML = ''; // 기존 카드 제거
+
+crewData.forEach(crew => {
+  if ((selectedRegion === "전체" || crew.region === selectedRegion) &&
+      (selectedSport === "전체" || crew.category === selectedSport)) {
+    
+    const ddayClass = crew.dday <= 14 ? 'dday-orange' : 'dday-black';
+    const borderClass = crew.dday == 1 ? 'border-mint' : '';
+
+    const crewCard = document.createElement('div');
+    crewCard.className = 'crew-card';
+    crewCard.innerHTML = `
+      <img src="${crew.image}" alt="${crew.category}" />
+      <div class="card-content ${borderClass}">
+        <div class="category-d-day">
+          <span class="category">${crew.category}</span> 
+          <span class="d-day ${ddayClass}">D-${crew.dday}</span>
         </div>
-      `;
-      crewCardsContainer.appendChild(crewCard);
-    }
-  });
-  
-  document.getElementById('region-button').textContent = `지역 : ${selectedRegion}`; // 지역 버튼 텍스트 업데이트
-  document.getElementById('sport-button').textContent = `운동 종목 : ${selectedSport}`; // 운동 종목 버튼 텍스트 업데이트
-  closeRegionModal();
-  closeSportModal();
+        <h3>${crew.title}</h3>
+        <a href="${crew.link}">상세보기</a>
+      </div>
+    `;
+    crewCardsContainer.appendChild(crewCard);
   }
-  
+});
+
+document.getElementById('region-button').textContent = `지역 : ${selectedRegion}`; // 지역 버튼 텍스트 업데이트
+document.getElementById('sport-button').textContent = `운동 종목 : ${selectedSport}`; // 운동 종목 버튼 텍스트 업데이트
+closeRegionModal();
+closeSportModal();
+}

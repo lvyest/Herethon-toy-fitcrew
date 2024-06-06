@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <title>IT CREW</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="crewmenu.css">
+  <link rel="stylesheet" href="header.css">
 </head>
 <body>
   <div class="App">
@@ -15,7 +16,7 @@
       <header>
         <nav>
           <a href="#">
-            <img src="image.png" alt="Logo" />
+            <img src="logoimage.png" alt="Logo" />
             <div class="logo">IT CREW</div>
           </a>
           <div class="nav-links">
@@ -45,7 +46,7 @@
   <div id="regionModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeRegionModal()">&times;</span>
-      <h2>지역</h2>
+      <h1>지역</h1>
       <div class="regions">
         <button data-region="전체">전체</button>
         <button data-region="서울">서울</button>
@@ -80,7 +81,7 @@
   <div id="sportModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeSportModal()">&times;</span>
-      <h2>종목</h2>
+      <h1>종목</h1>
       <div class="sports">
         <button data-category="전체">전체</button>
         <button data-category="축구">축구</button>
@@ -91,11 +92,14 @@
         <button data-category="탁구">탁구</button>
         <button data-category="수영">수영</button>
         <button data-category="태권도">태권도</button>
-        <button data-category="전체">전체</button>
-        <button data-category="축구">축구</button>
-        <button data-category="농구">농구</button>
-        <button data-category="배구">배구</button>
-        <button data-category="야구">야구</button>
+        <button data-category="요가">요가</button>
+        <button data-category="러닝">러닝</button>
+        <button data-category="빙상">빙상</button>
+        <button data-category="등산">등산</button>
+        <button data-category="볼링">볼링</button>
+        <button data-category="헬스">헬스</button>
+        <button data-category="기타">기타</button>
+
         <!-- 필요에 따라 더 추가 -->
       </div>
       <div class="modal-buttons">
@@ -106,7 +110,7 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="data.js"></script>
   <script src="modal.js"></script>
 </body>
 </html>
