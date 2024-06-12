@@ -21,7 +21,6 @@
 
                 <!-- 업로드 버튼 -->
                 <form action="{% url 'feedApp2:create' %}" method="post" enctype="multipart/form-data">
-                    <Image id="imagePreviewOne" thumbnail src="URL.createObjectURL(--get image object using selector--)"/>
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button class="upload-final" type="submit">업로드</button>

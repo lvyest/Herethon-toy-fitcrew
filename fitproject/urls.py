@@ -22,7 +22,7 @@ from django.urls import path, include
 from crewhome.views import crewhome
 
 urlpatterns = [
-    path('',crewhome,name='home'),
+    # path('',crewhome,name='home'),
 
     path('admin/', admin.site.urls),
     path('accountapp/', include('accountapp.urls')),

@@ -2,13 +2,16 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/feed.css' %}">
 
 <style>
-
+.post-like {
+    text-decoration: none;
+}
 
 </style>
 
 <div class="post existing-post">
     <div class="feed-profile">
-        <img src="{{ feed.writer.profile.image.url }}" alt="profile-image">
+        <img src="{% if feed.writer.profile.image.url %}{{ feed.writer.profile.image.url }}{% else %}{% static '/pic/usericon.svg' %}{% endif %}" alt="profile-image">
+
         <p> {{ feed.writer }} </p>
     </div>
     <img src="{{ feed.image.url }}" alt="운동">
@@ -21,7 +24,7 @@
     <div class="post-info">
         <div class="post-meta">
 
-            <span class="post-like">좋아요 {{ feed.like }}개</span>
+            <span class="post-like" style="text-decoration: none;">좋아요 {{ feed.like }}개</span>
             <div class="post-write">
                 <p class="post-name"> {{ feed.writer.profile.nickname }} </p>
                 <p>{{ feed.content }}</p>
