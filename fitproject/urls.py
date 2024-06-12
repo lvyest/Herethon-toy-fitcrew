@@ -23,7 +23,7 @@ from crewhome.views import crewhome
 
 urlpatterns = [
     # path('',crewhome,name='home'),
-
+    path('',include('crewhome.urls')),
     path('admin/', admin.site.urls),
     path('accountapp/', include('accountapp.urls')),
     path('comment/', include('commentApp2.urls')),
