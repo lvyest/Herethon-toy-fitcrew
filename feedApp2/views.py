@@ -3,7 +3,7 @@ import random
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, TemplateView, DetailView
 from django.views.generic.edit import FormMixin
@@ -34,6 +34,7 @@ class FeedListView(ListView, FormMixin):
 class FeedCreateView(CreateView):
     model = Feed
     form_class = FeedCreationForm
+    success_url = reverse_lazy('accountapp:login')
     template_name = 'feedApp2/create.html'
 
 
